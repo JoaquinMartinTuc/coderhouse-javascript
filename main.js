@@ -1,130 +1,206 @@
-let nombre;
+// let nombre;
 
-while (!nombre) {
-    nombre = prompt("Bienvenido a la web de Cens Sport, por favor ingrese su nombre debajo.");
-}
+// while (!nombre) {
+//     nombre = prompt("Bienvenido a la web de Cens Sport, por favor ingrese su nombre debajo.");
+// }
 
-alert(`Hola ${nombre}, a continuación podrás elegir tu prenda de ropa.`);
-
-
-const productos = [
-    { prenda: "remera Oversize", color: ["Negro", "Blanco", "Rojo", "Morado"], precio: 4500 },
-    { prenda: "remera Clásica", color: ["Blanco", "Negro", "Azul"], precio: 3500 },
-    { prenda: "remera Estampada", color: ["Azul", "Negro"], precio: 5000 },
-    { prenda: "jean Recto", color: ["Azul"], precio: 7000 },
-    { prenda: "jean Oversize", color: ["Blanco", "Azul"], precio: 8000 },
-    { prenda: "jean Chupin", color: ["Azul", "Negro"], precio: 6000 },
-    { prenda: "medias 3/4", color: ["Blanco", "Negro"], precio: 1500 },
-    { prenda: "medias soquete", color: ["Blanco", "Negro"], precio: 1000 }
-];
+// alert(`Hola ${nombre}, a continuación podrás elegir tu prenda de ropa.`);
 
 
-// Para agregar un producto, generar un nuevo elemento 
+// const productos = [
+//     { prenda: "remera Oversize", color: ["Negro", "Blanco", "Rojo", "Morado"], precio: 4500 },
+//     { prenda: "remera Clásica", color: ["Blanco", "Negro", "Azul"], precio: 3500 },
+//     { prenda: "remera Estampada", color: ["Azul", "Negro"], precio: 5000 },
+//     { prenda: "jean Recto", color: ["Azul"], precio: 7000 },
+//     { prenda: "jean Oversize", color: ["Blanco", "Azul"], precio: 8000 },
+//     { prenda: "jean Chupin", color: ["Azul", "Negro"], precio: 6000 },
+//     { prenda: "medias 3/4", color: ["Blanco", "Negro"], precio: 1500 },
+//     { prenda: "medias soquete", color: ["Blanco", "Negro"], precio: 1000 }
+// ];
 
-const nuevoProducto = { prenda: "gorra", color: ["Negro"], precio: 4000 };
-productos.push(nuevoProducto);
 
-//
+// // Para agregar un producto, generar un nuevo elemento 
 
-let eleccionTipo;
+// const nuevoProducto = { prenda: "gorra", color: ["Negro"], precio: 4000 };
+// productos.push(nuevoProducto);
 
-while (true) {
-    eleccionTipo = prompt("¿Desea buscar por prenda o por color?").toLowerCase();
+// //
 
-    if (eleccionTipo === "prenda" || eleccionTipo === "color") {
-        break;
-    } else {
-        alert("Por favor, elija 'prenda' o 'color'");
-    }
-}
+// let eleccionTipo;
 
-let eleccion;
+// while (true) {
+//     eleccionTipo = prompt("¿Desea buscar por prenda o por color?").toLowerCase();
 
-while (!eleccion) {
-    eleccion = prompt("Ingrese el nombre de la prenda o el color que desea:\nPrendas: Remera, Jean, Medias, Gorra\nColor: Blanco, Negro, Azul, Rojo, Morado").toLowerCase();
-}
+//     if (eleccionTipo === "prenda" || eleccionTipo === "color") {
+//         break;
+//     } else {
+//         alert("Por favor, elija 'prenda' o 'color'");
+//     }
+// }
 
-if (eleccionTipo === "prenda") {
-    const resultado = productos.filter((producto) => {
-        return producto.prenda.toLowerCase().includes(eleccion) || producto.color.some(color => color.toLowerCase().includes(eleccion));
+// let eleccion;
+
+// while (!eleccion) {
+//     eleccion = prompt("Ingrese el nombre de la prenda o el color que desea:\nPrendas: Remera, Jean, Medias, Gorra\nColor: Blanco, Negro, Azul, Rojo, Morado").toLowerCase();
+// }
+
+// if (eleccionTipo === "prenda") {
+//     const resultado = productos.filter((producto) => {
+//         return producto.prenda.toLowerCase().includes(eleccion) || producto.color.some(color => color.toLowerCase().includes(eleccion));
+//     });
+
+//     if (resultado.length > 0) {
+//         let mensaje = "Información de las prendas seleccionadas:\n\n";
+//         resultado.forEach((producto) => {
+//             mensaje += `Prenda: ${producto.prenda}\nColores: ${producto.color.join(', ')}\nPrecio: $${producto.precio}\n\n`;
+//         });
+//         alert(mensaje);
+//     } else {
+//         alert(`No se encontraron productos con ese nombre o color.`);
+//     }
+// } else if (eleccionTipo === "color") {
+//     const resultado = productos.filter((producto) => {
+//         return producto.color.some(color => color.toLowerCase().includes(eleccion));
+//     });
+
+//     if (resultado.length > 0) {
+//         let mensaje = "Información de las prendas con el color seleccionado:\n\n";
+//         resultado.forEach((producto) => {
+//             mensaje += `Prenda: ${producto.prenda}\nColores: ${producto.color.join(', ')}\nPrecio: $${producto.precio}\n\n`;
+//         });
+//         alert(mensaje);
+//     } else {
+//         alert(`No se encontraron productos con ese color.`);
+//     }
+// }
+
+// const carrito = [];
+
+// function mostrarProductos() {
+//     let mensaje = "Productos disponibles:\n";
+//     productos.forEach((producto, index) => {
+//         mensaje += `${index + 1}. ${producto.prenda} - Colores: ${producto.color.join(', ')} - Precio: $${producto.precio}\n`;
+//     });
+//     return mensaje;
+// }
+
+// function agregarAlCarrito(productoIndex, cantidad) {
+//     const producto = productos[productoIndex];
+//     carrito.push({ producto, cantidad });
+//     return `${cantidad} ${producto.prenda} (${producto.color.join(', ')}) agregadas al carrito.`;
+// }
+
+// function mostrarCarrito() {
+//     let mensaje = "Contenido del carrito:\n";
+//     let total = 0;
+//     carrito.forEach((item) => {
+//         const { producto, cantidad } = item;
+//         mensaje += `${cantidad} ${producto.prenda} (${producto.color.join(', ')}) - Precio: $${producto.precio * cantidad}\n`;
+//         total += producto.precio * cantidad;
+//     });
+//     mensaje += `Total de la compra: $${total}`;
+//     return mensaje;
+// }
+
+// while (true) {
+//     const opcion = prompt(
+//         mostrarProductos() +
+//         "\nIngrese el número del producto que desea agregar al carrito (o 'terminar' para finalizar la compra):"
+//     );
+
+//     if (opcion.toLowerCase() === "terminar") {
+//         alert(mostrarCarrito());
+//         break;
+//     }
+
+//     const productoIndex = parseInt(opcion) - 1;
+//     if (productoIndex >= 0 && productoIndex < productos.length) {
+//         const cantidad = parseInt(prompt(`¿Cuántos ${productos[productoIndex].prenda} (${productos[productoIndex].color.join(', ')}) desea agregar al carrito?`));
+//         if (!isNaN(cantidad) && cantidad > 0) {
+//             alert(agregarAlCarrito(productoIndex, cantidad));
+//             alert(mostrarCarrito());
+//         } else {
+//             alert("Cantidad no válida. Intente de nuevo.");
+//         }
+//     } else {
+//         alert("Número de producto no válido. Intente de nuevo.");
+//     }
+// }
+
+// alert ("Muchas gracias por su compra, lo esperamos de vuelta")
+
+const productos = document.querySelectorAll('.producto');
+const carrito = document.getElementById('carrito');
+const total = document.getElementById('total');
+let totalCompra = 0;
+let productosSeleccionados = JSON.parse(localStorage.getItem('productosSeleccionados')) || {};
+
+function actualizarCarrito() {
+    carrito.innerHTML = '';
+    totalCompra = 0;
+    
+    const productosArray = Array.from(productos);
+
+
+    productosArray.sort((a, b) => {
+        const nombreA = a.querySelector('h2').textContent;
+        const nombreB = b.querySelector('h2').textContent;
+        return nombreA.localeCompare(nombreB);
     });
 
-    if (resultado.length > 0) {
-        let mensaje = "Información de las prendas seleccionadas:\n\n";
-        resultado.forEach((producto) => {
-            mensaje += `Prenda: ${producto.prenda}\nColores: ${producto.color.join(', ')}\nPrecio: $${producto.precio}\n\n`;
-        });
-        alert(mensaje);
-    } else {
-        alert(`No se encontraron productos con ese nombre o color.`);
-    }
-} else if (eleccionTipo === "color") {
-    const resultado = productos.filter((producto) => {
-        return producto.color.some(color => color.toLowerCase().includes(eleccion));
-    });
+    for (const producto of productosArray) {
+        const idProducto = producto.getAttribute('id');
+        const productoSeleccionado = productosSeleccionados[idProducto];
 
-    if (resultado.length > 0) {
-        let mensaje = "Información de las prendas con el color seleccionado:\n\n";
-        resultado.forEach((producto) => {
-            mensaje += `Prenda: ${producto.prenda}\nColores: ${producto.color.join(', ')}\nPrecio: $${producto.precio}\n\n`;
-        });
-        alert(mensaje);
-    } else {
-        alert(`No se encontraron productos con ese color.`);
-    }
-}
-
-const carrito = [];
-
-function mostrarProductos() {
-    let mensaje = "Productos disponibles:\n";
-    productos.forEach((producto, index) => {
-        mensaje += `${index + 1}. ${producto.prenda} - Colores: ${producto.color.join(', ')} - Precio: $${producto.precio}\n`;
-    });
-    return mensaje;
-}
-
-function agregarAlCarrito(productoIndex, cantidad) {
-    const producto = productos[productoIndex];
-    carrito.push({ producto, cantidad });
-    return `${cantidad} ${producto.prenda} (${producto.color.join(', ')}) agregadas al carrito.`;
-}
-
-function mostrarCarrito() {
-    let mensaje = "Contenido del carrito:\n";
-    let total = 0;
-    carrito.forEach((item) => {
-        const { producto, cantidad } = item;
-        mensaje += `${cantidad} ${producto.prenda} (${producto.color.join(', ')}) - Precio: $${producto.precio * cantidad}\n`;
-        total += producto.precio * cantidad;
-    });
-    mensaje += `Total de la compra: $${total}`;
-    return mensaje;
-}
-
-while (true) {
-    const opcion = prompt(
-        mostrarProductos() +
-        "\nIngrese el número del producto que desea agregar al carrito (o 'terminar' para finalizar la compra):"
-    );
-
-    if (opcion.toLowerCase() === "terminar") {
-        alert(mostrarCarrito());
-        break;
-    }
-
-    const productoIndex = parseInt(opcion) - 1;
-    if (productoIndex >= 0 && productoIndex < productos.length) {
-        const cantidad = parseInt(prompt(`¿Cuántos ${productos[productoIndex].prenda} (${productos[productoIndex].color.join(', ')}) desea agregar al carrito?`));
-        if (!isNaN(cantidad) && cantidad > 0) {
-            alert(agregarAlCarrito(productoIndex, cantidad));
-            alert(mostrarCarrito());
-        } else {
-            alert("Cantidad no válida. Intente de nuevo.");
+        if (productoSeleccionado && productoSeleccionado.cantidad > 0) {
+            const nuevoItem = document.createElement('li');
+            nuevoItem.textContent = `${productoSeleccionado.nombre} - $${(productoSeleccionado.precio * productoSeleccionado.cantidad).toFixed(2)} (x${productoSeleccionado.cantidad})`;
+            carrito.appendChild(nuevoItem);
+            totalCompra += productoSeleccionado.precio * productoSeleccionado.cantidad;
         }
-    } else {
-        alert("Número de producto no válido. Intente de nuevo.");
     }
+    
+    total.textContent = totalCompra.toFixed(2);
+    guardarLocalStorage();
 }
 
-alert ("Muchas gracias por su compra, lo esperamos de vuelta")
+function guardarLocalStorage() {
+    localStorage.setItem('productosSeleccionados', JSON.stringify(productosSeleccionados));
+}
+
+productos.forEach(producto => {
+    const botonAgregar = producto.querySelector('.agregar');
+    const botonQuitar = producto.querySelector('.quitar');
+
+    botonAgregar.addEventListener('click', () => {
+        const idProducto = producto.getAttribute('id');
+        if (productosSeleccionados[idProducto]) {
+            productosSeleccionados[idProducto].cantidad += 1;
+        } else {
+            productosSeleccionados[idProducto] = {
+                nombre: producto.querySelector('h2').textContent,
+                precio: parseFloat(producto.querySelector('p').textContent.replace('Precio: $', '')),
+                cantidad: 1
+            };
+        }
+        totalCompra += productosSeleccionados[idProducto].precio;
+        total.textContent = totalCompra.toFixed(2);
+        actualizarCarrito();
+    });
+
+    botonQuitar.addEventListener('click', () => {
+        const idProducto = producto.getAttribute('id');
+        if (productosSeleccionados[idProducto] && productosSeleccionados[idProducto].cantidad > 0) {
+            productosSeleccionados[idProducto].cantidad -= 1;
+            totalCompra -= productosSeleccionados[idProducto].precio;
+            total.textContent = totalCompra.toFixed(2);
+            actualizarCarrito();
+        }
+    });
+});
+
+// localStorage
+window.addEventListener('load', () => {
+    productosSeleccionados = JSON.parse(localStorage.getItem('productosSeleccionados')) || {};
+    actualizarCarrito();
+});

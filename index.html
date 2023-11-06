@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <div class="titulo">
+        <h1 class=>Selección de productos y carrito de Compras</h1>
+        <p> Entrega 3 - Joaquín Martin</p>
+    </div>
 
+    <div class="productos">
+        <div class="producto" id="producto1">
+            <img src="./img/82098541-plantilla-de-diseño-de-camiseta-de-hombre-negro-aislado-sobre-fondo-blanco-muestra-de-recorte-removebg-preview.png"
+                alt="Remera Ejemplo">
+            <h2 class="separar">Producto 1 - Remera ejemplo</h2>
+            <p class="separar">Precio: $10.00</p>
+            <button class="agregar separar boton">Agregar al carrito</button>
+            <button class="quitar separar boton2">Quitar del carrito</button>
 
-<script src="./main.js"></script>
+        </div>
+
+        <div class="producto" id="producto2">
+            <img src="./img/pantalon-elastico-con-muestra-geometrica-jack-jones-navy-blazer-520x520_d48XSoY-removebg-preview.png"
+                alt="Pantalon Ejemplo">
+            <h2 class="separar">Producto 2 - Pantalon ejemplo</h2>
+            <p class="separar">Precio: $15.00</p>
+            <button class="agregar separar boton">Agregar al carrito</button>
+            <button class="quitar separar boton2">Quitar del carrito</button>
+
+        </div>
+
+        <div class="producto" id="producto3">
+            <img src="./img/zapatillas-trekking-fire-t4-mujer-beige-21301mt3246z0w2-1-removebg-preview.png"
+                alt="Zapatillas Ejemplo">
+            <h2 class="separar">Producto 3 - Zapatillas ejemplo</h2>
+            <p class="separar">Precio: $20.00</p>
+            <button class="agregar separar boton">Agregar al carrito</button>
+            <button class="quitar separar boton2">Quitar del carrito</button>
+
+        </div>
+    </div>
+
+    <div class="carrito-diseño">
+        <h2 class="separar">Carrito</h2>
+        <ul class="lista separar" id="carrito">
+        </ul>
+        <p class="separar">Total: $<span class="separar" id="total">0.00</span></p>
+    </div>
+
+    <script src="main.js"></script>
 </body>
+
 </html>
