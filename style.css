@@ -79,3 +79,10 @@ img {
 .lista {
     list-style-type: none;
 }
+
+.temporada {
+    display: flex;
+    width: 100%;
+    padding: 3rem;
+    justify-content: space-around;
+}

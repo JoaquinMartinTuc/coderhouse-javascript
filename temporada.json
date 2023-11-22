@@ -1,0 +1,13 @@
+[{
+    "id": 1,
+    "nombre": "camisa",
+    "mensaje": "Proximamente - Nueva temporada",
+    "imagen": "./img/camisa.png"
+},
+{
+    "id": 2,
+    "nombre": "short",
+    "mensaje": "Proximamente - Nueva temporada",
+    "imagen": "./img/short.png"
+}
+]
