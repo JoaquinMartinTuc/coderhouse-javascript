@@ -108,17 +108,27 @@ const traerProductos = async () => {
     const respuesta = await fetch("temporada.json");
     const data = await respuesta.json();
 
-
-    data.forEach((product) => {
+    data.forEach((product, index) => {
         let content = document.createElement('div');
         content.className = "card"
         content.innerHTML = `
-            <img src="${product.imagen}">
-            <p>${product.mensaje}</p>
-            `;
+            <img class="separar producto" src="${product.imagen}">
+            <h2 class="separar producto">${product.producto}</h2>
+            <p class="separar producto">${product.mensaje}</p>
+            <button id="boton-${index}" class="boton3">${product.boton}</button>
+        `;
 
         temporada.append(content);
+
+        // Agregar evento click al botón recién creado
+        const boton = document.getElementById(`boton-${index}`);
+        boton.addEventListener('click', () => {
+            // Abrir la página en una nueva pestaña
+            window.open("nueva-temporada.html", "_blank");
+        });
     });
 };
 
-traerProductos()
+traerProductos();
+
+

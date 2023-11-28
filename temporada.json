@@ -1,13 +1,18 @@
-[{
-    "id": 1,
-    "nombre": "camisa",
-    "mensaje": "Proximamente - Nueva temporada",
-    "imagen": "./img/camisa.png"
-},
-{
-    "id": 2,
-    "nombre": "short",
-    "mensaje": "Proximamente - Nueva temporada",
-    "imagen": "./img/short.png"
-}
+[
+    {
+        "id": 1,
+        "nombre": "camisa",
+        "producto": "Producto 4 - Camisa ejemplo",
+        "mensaje": "Proximamente - Nueva Temporada",
+        "imagen": "./img/camisa.png",
+        "boton": "Ver adelanto de Camisas"
+    },
+    {
+        "id": 2,
+        "nombre": "short",
+        "producto": "Producto 5 - Short ejemplo",
+        "mensaje": "Proximamente - Nueva Temporada",
+        "imagen": "./img/short.png",
+        "boton": "Ver adelanto de Shorts"
+    }
 ]
